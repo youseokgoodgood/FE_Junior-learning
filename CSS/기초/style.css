@@ -23,7 +23,7 @@ h1,p{
     margin: 0;
 }
 /* display: block; 
--경우 현재 내 부모영역(body영역) 만큼 차지함,박스영역 
+-현재 내 부모영역(body영역) 만큼 차지함,박스영역 
 
 div {
     display: block; 
