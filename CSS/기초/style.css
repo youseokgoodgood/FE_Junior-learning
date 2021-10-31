@@ -1,0 +1,133 @@
+/* CSS BOX MODEDL 
+1.box-sizing:content-box(기본값)
+- width:300, height:200 padding:20,border:5,margin:15
+- width 는 380, height 는 280이 되며, 실제로 내가 준 사이즈 보다 내부 외부에 준 값들로 인해 사이즈가 더 커짐.
+
+2.box-sizing:border-box(border까지만 width에 포함)
+- width:300, height:200 padding:20,border:5,margin:15
+- width 는 330, height 는 230이 되며, 실제로 내가 준 사이즈 보다 border까지만 더한 후 영역이 잡힘.
+*/
+
+/* '*' 태그경우 html 전체태그들은 참조하기 때문에 랜더링 속도가 느려지기 때문에 잘 사용하지 않음.
+*{
+    margin: 0;
+}
+ */
+
+body{
+    margin: 0;
+    font-size: 2em;
+}
+
+h1,p{
+    margin: 0;
+}
+/* display: block; 
+-경우 현재 내 부모영역(body영역) 만큼 차지함,박스영역 
+
+div {
+    display: block; 
+    width: 300px;
+    height: 200px;
+    background-color: red;
+}
+*/
+
+/* 
+1. display: inline; 
+- 내 영역만큼 만 차지함, 텍스트 영역.
+- 박스영역이 아니여서 크기지정을 할 수 없음.
+
+2.inline-block;
+- 텍스트영역과 박스영역을 가지고 있으므로, 크기지정이 가능함.
+
+span {
+    display: inline-block;
+    width: 200px;
+    height: 500px;
+    background-color: blue;
+}
+*/
+
+.container{
+    /**/ max-width: 1000px;
+    margin: 0 auto; 
+    /*font-size: 0;*/
+    background-color: pink;
+}
+
+/* 
+1. .container:after  
+- 가상 엘리먼트를 생성하여 float 방지
+- 자식들을 float를 했으면 부모단에서 clear: both를 해야됨.
+ -> 부모 엘리먼트 정상적으로 높이를 확보 하기위함.
+.container:before{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.container:after{
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+*/
+
+
+/* 
+1.float: left; 
+- 적용된 태그들 주변으로 왼쪽으로 정렬됨.
+- 자식들이 float로 되어있을 경우 부모는 없는 자식처럼 되어 품고 있는 자식 태그들이 없음. 
+*/
+.item{
+    /* float: left; */
+    /* display: inline-block;
+    vertical-align: top; */
+    padding: 5%;
+    /*font-size: 1rem; root em: 16px*/
+}
+
+.item-a{
+    /* width: 30%; */
+    background-color: yellow;
+}
+
+.item-b{
+    /* width: 50%; */
+    background-color: yellowgreen;
+}
+
+footer{
+    /* clear: both; */
+    background-color: gray;
+}
+
+/* 반응형 제작 */
+
+/*
+1. @media screen and (min-width: 700px)
+- width가 700px 이상일때 작동.
+
+*/
+@media screen and (min-width: 700px) {
+    .container{
+        font-size: 0;
+    }
+    
+    .item{
+        display: inline-block;
+        vertical-align: top;
+        font-size: 1rem; /*root em: 16px*/
+    }
+
+    .item-a{
+        width: 30%;
+    }
+
+    .item-b{
+        width: 50%;
+    }
+}
