@@ -1,0 +1,131 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+  1. display: flex;
+    - 컬럼 레이아웃을 만들때 좋음.
+    - 기본값이 flex-direction: row;
+    - wrap 부모가 자식들 폭 보다 줄어 들었을때 어떻게 할건지 결정하는것임.
+
+  2. justify-content:
+    - 수평값 오뎅 꼬치 생각 하면됨 옆 오른쪽
+
+  3. align-items:
+    - 수직값임
+*/
+
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* align-content: space-between; */
+    height: 100vh;
+    background-color: lightgray;   
+}
+
+/*
+ 1. flex-grow: 1;
+    - 컨테이너 넓이 만큼 비율로 가짐
+ 2. order 
+    - 원하는 순서대로 정렬
+ 3. align-self 
+    - 나 자신만 정렬
+ 4. flex 
+    - 비율 선택
+*/
+
+.item{
+    /* flex-basis: 0; */
+    /* flex-grow: 1; */
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.item:nth-child(1){
+    flex: 1;
+    /* align-self: flex-start; */
+    order: 2;
+}
+
+.item:nth-child(2){
+    flex:2;
+    /* align-self: center; */
+    order: 3;
+}
+
+.item:nth-child(3){
+    flex:1;
+    /* align-self: flex-end; */
+    order: 2;
+}
+
+/* .item:nth-child(1){
+    flex-grow: 1;
+    flex:1;
+} */
+
+/* .item:nth-child(2){
+    flex-grow: 2;
+    flex:2;
+} */
+
+/* .item:nth-child(3){
+    flex-grow: 1;
+    flex:1;
+} */
+
+.item:nth-child(odd){
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.item:nth-child(even){
+    background-color: rgba(145, 255, 0, 0.5);
+}
+
+.item > img{
+    width: 100px;
+    height: 100px;
+}
+
