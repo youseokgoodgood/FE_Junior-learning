@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>CSS 레이아웃</title>
+        <meta charset="UTF-8">
+        <!-- viewport를 넣어주는 이유는 모바일사이트로 접속 시 폰트사이즈 등 데스크탑처럼 보이지않기위해 적용 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=3.0">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <script>
+        let intArray = [1,0,2,3,0,4,5,0];
+        let length = intArray.length;
+        let cnt = 0;
+
+        //[1,0,0,2,3,0,0,4]
+        for (let i = intArray.length; i > 0; i--) {
+            if(cnt === 0){
+                if(intArray[i] === 0){
+                    intArray[i] = 0;
+                    intArray[i + 1] = intArray[i];
+                    cnt = 1;
+                }else{
+                    intArray[i + 1] = intArray[i];
+                }
+            }else{
+                cnt = 0;
+            }
+            
+        }
+
+        //intArray[0] = 20;
+        intArray.length = length;
+        console.log(intArray);
+    </script>
+    <body>
+    </body>
+</html>
