@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>display 속성</title>
+		<style>
+			/* 
+			 - div 태그요소 경우 안에 담긴 요소에 따라 인라인 블록으로 형태가 바뀌는듯함
+			*/
+			div {
+				margin:20px;
+				border:1px solid #ccc;
+				border-radius:5px;
+			}
+			#inline img {
+				margin:10px;
+			}
+			#block img {
+				display:block;
+				margin:10px;
+			}
+
+			#spanInline > span{
+			 display: block;
+			}
+
+			#spanInline > p{
+			 margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="inline">
+			<img src="../images/pic1.jpg">
+			<img src="../images/pic2.jpg">
+			<img src="../images/pic3.jpg">
+		</div>
+		<div id="block">
+			<img src="../images/pic1.jpg">
+			<img src="../images/pic2.jpg">
+			<img src="../images/pic3.jpg">
+		</div>
+
+		<div id="spanInline">
+			<p>123123</p>
+			<span>123123</span>
+			<span>123123</span>
+		</div>
+	</body>
+</html>
