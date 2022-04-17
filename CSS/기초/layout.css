@@ -3,8 +3,9 @@ body{
 }
 header {
 	width: 80%;
-	margin-right: auto;
-	margin-left: auto;
+	/* margin-right: auto;
+	margin-left: auto; */
+	margin: 0 auto;
 	background-color: #069;
 	padding: 10px;
 	overflow: hidden;

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>2단 레이아웃</title>
+    <style>
+      div {
+        border: 1px solid #ccc; /* 모든 영역에 테두리 표시 */
+      }
+      .container {
+        width: 960px; /* 컨테이너 너비 */
+        padding: 20px; /* 패딩 */
+        margin: 0 auto; /* 화면 중앙에 배치 */
+      }
+      .header {
+        padding: 20px; /* 패딩 */
+        margin-bottom: 20px; /* 아래 요소들과의 간격(마진) */
+      }
+
+      .contents {
+        width: 600px;
+        /* padding: 20px; */
+        float: left;
+        margin-bottom: 20px;
+      }
+
+      .sidebar1 {
+        width: 150px;
+        float: left;
+        margin-bottom: 20px;
+        margin-right: 20px;
+      }
+
+      .sidebar2 {
+        width: 150px;
+        /* padding: 20px; */
+        float: right;
+        margin-bottom: 20px;
+      }
+
+      .footer {
+        clear: both;
+        padding: 20px;
+      }
+    </style>
+    <!-- <style>
+      div {
+        border: 1px solid #ccc; /* 모든 영역에 테두리 표시 */
+      }
+      .container {
+        width: 960px; /* 컨테이너 너비 */
+        padding: 20px; /* 패딩 */
+        margin: 0 auto; /* 화면 중앙에 배치 */
+      }
+      .header {
+        padding: 20px; /* 패딩 */
+        margin-bottom: 20px; /* 아래 요소들과의 간격(마진) */
+      }
+      .contents {
+        width: 620px; /* 너비 */
+        padding: 20px; /* 패딩 */
+        float: left; /* 왼쪽으로 플로팅 */
+        margin-bottom: 20px; /* 아래 요소와의 간격 */
+      }
+      .sidebar {
+        width: 220px; /* 너비 */
+        padding: 20px; /* 패딩 */
+        float: right; /* 오른쪽으로 플로팅 */
+        margin-bottom: 20px; /* 아래 요소와의 간격 */
+        background: #eee;
+      }
+      .footer {
+        clear: both; /* 양쪽 플로팅 해제 */
+        padding: 20px; /* 패딩 */
+      }
+    </style> -->
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>사이트 제목</h1>
+      </div>
+
+      <div class="sidebar1">
+        <h2>사이드바</h2>
+        <ul>
+          <li>
+            대법원과 각급법원의 조직은 법률로 정한다. 대통령의 선거에 관한
+            사항은 법률로 정한다.
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar2">
+        <h2>사이드바</h2>
+        <ul>
+          <li>
+            대법원과 각급법원의 조직은 법률로 정한다. 대통령의 선거에 관한
+            사항은 법률로 정한다.
+          </li>
+        </ul>
+      </div>
+
+      <div class="contents">
+        <h2>본문</h2>
+        <p>
+          언론·출판에 대한 허가나 검열과 집회·결사에 대한 허가는 인정되지
+          아니한다. 여자의 근로는 특별한 보호를 받으며, 고용·임금 및 근로조건에
+          있어서 부당한 차별을 받지 아니한다. 국가는 법률이 정하는 바에 의하여
+          재외국민을 보호할 의무를 진다. 학교교육 및 평생교육을 포함한
+          교육제도와 그 운영, 교육재정 및 교원의 지위에 관한 기본적인 사항은
+          법률로 정한다.
+        </p>
+        <p>
+          모든 국민은 행위시의 법률에 의하여 범죄를 구성하지 아니하는 행위로
+          소추되지 아니하며, 동일한 범죄에 대하여 거듭 처벌받지 아니한다.
+          행정각부의 장은 국무위원 중에서 국무총리의 제청으로 대통령이 임명한다.
+          모든 국민은 종교의 자유를 가진다. 국군의 조직과 편성은 법률로 정한다.
+          국민경제자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다.
+        </p>
+      </div>
+
+      <div class="footer">
+        <h2>푸터</h2>
+        <p>
+          모든 국민은 신체의 자유를 가진다. 누구든지 법률에 의하지 아니하고는
+          체포·구속·압수·수색 또는 심문을 받지 아니하며, 법률과 적법한 절차에
+          의하지 아니하고는 처벌·보안처분 또는 강제노역을 받지 아니한다. 모든
+          국민은 그 보호하는 자녀에게 적어도 초등교육과 법률이 정하는 교육을
+          받게 할 의무를 진다.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
