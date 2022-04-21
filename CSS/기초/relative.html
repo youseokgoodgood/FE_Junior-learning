@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS 포지셔닝</title>
+    <style>
+      /* 
+		static,relative : 요소를 문서의 흐름대로 맞추어 배치 할 수 있으며, relative는 위치를 조정 할 수 있음.
+		absolute : 원하는 위치에 지정 가능
+		fixed : 지정한 위치에 고정
+		
+		*/
+      .box1 {
+        float: left;
+        width: 100px;
+        background: #ffd800;
+        margin-right: 10px;
+        padding: 20px;
+      }
+      .box2 {
+        position: relative;
+        left: -50px;
+        top: 30px;
+        width: 300px;
+        background: #0094ff;
+        float: left;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">박스1</div>
+    <div class="box2">박스2</div>
+  </body>
+</html>
