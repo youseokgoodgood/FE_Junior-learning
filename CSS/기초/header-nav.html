@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sim's Float 연습</title>
   </head>
   <style>
     .container {
+      /* position: absolute; */
       width: 960px;
       margin: 0 auto;
       background-color: #fff;
-      border: 1px solid #e7e7e7;
+      border: 5px solid #e7e7e7;
     }
     header {
       position: relative;
@@ -28,6 +29,7 @@
       font-size: 3em;
       color: #ffc;
       font-weight: 600;
+      text-shadow: 0px 1px 1px #000;
     }
 
     header h2 {
@@ -62,9 +64,43 @@
       color: yellow;
     }
 
+    .content {
+      width: 720px;
+      float: left;
+      padding-top: 5px;
+      padding-left: 10px;
+    }
+
+    .content h3 {
+      font-size: 1em;
+    }
+
+    .content p {
+      font-size: 0.8em;
+    }
+
     .sidebar {
-      width: 220px;
+      width: 200px;
+      height: 550px;
       float: right;
+      background-color: lightgray;
+      padding-top: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .sidebar h3 {
+      font-size: 1em;
+    }
+
+    .sidebar p {
+      font-size: 0.8em;
+    }
+
+    .sidebar img {
+      margin-bottom: 5px;
+      border: 1px solid #ccc;
+      text-align: center;
     }
   </style>
   <body>
