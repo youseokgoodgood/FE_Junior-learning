@@ -21,10 +21,10 @@
       letter-spacing: 2px;
     }
 
-    section:not(#imgJob_Section) {
-      position: relative;
-      margin-left: 35%;
-      margin-bottom: 3%;
+    div:not(.wap, #bgh_color, #imgJob_Section) {
+      margin-left: auto;
+      margin-right: auto;
+      width: 700px;
     }
 
     p {
@@ -81,39 +81,6 @@
       text-align: center;
       letter-spacing: 2px;
     }
-
-    /* #AboutMe_Section {
-      position: relative;
-    }
-
-    #AboutMe_Section article {
-      position: absolute;
-      left: 35%;
-    }
-
-    #Goal_Section {
-      position: relative;
-    }
-
-    #Goal_Section article {
-      position: absolute;
-      left: 35%;
-      top: 168px;
-    }
-
-    #Goal_Section p span {
-      font-weight: 600;
-    }
-
-    #Career_Section {
-      position: relative;
-    }
-
-    #Career_Section article {
-      position: absolute;
-      left: 35%;
-      top: 168px;
-    } */
   </style>
   <body>
     <div class="wap">
@@ -121,15 +88,15 @@
         <h1>About Me</h1>
       </div>
       <!-- 이미지 및 직종소개 -->
-      <section class="select-item" id="imgJob_Section">
+      <div class="select-item" id="imgJob_Section">
         <article>
           <img src="../images/me.jpg" />
           <h3>심유석</h3>
           <p>Front-End Developer</p>
         </article>
-      </section>
+      </div>
       <!-- 자기소개 -->
-      <section class="select-item" id="AboutMe_Section">
+      <div class="select-item" id="AboutMe_Section">
         <article>
           <h3>소개</h3>
           <p>안녕하세요. Front-End Developer 심유석 입니다.</p>
@@ -138,9 +105,9 @@
             입니다.
           </p>
         </article>
-      </section>
+      </div>
       <!-- 목표 -->
-      <section class="select-item" id="Goal_Section">
+      <div class="select-item" id="Goal_Section">
         <article>
           <h3>목표</h3>
           <p>처음에는 정말 디자인에 <span>'디'</span> 자도 몰랐다.</p>
@@ -160,16 +127,16 @@
             목표 이다.
           </p>
         </article>
-      </section>
+      </div>
       <!-- 경력사항 -->
-      <section class="select-item" id="Career_Section">
+      <div class="select-item" id="Career_Section">
         <article>
           <h3>경력사항</h3>
           <ul>
             <li>골든플래닛<span>(2018.11~재직중)</span></li>
           </ul>
         </article>
-      </section>
+      </div>
     </div>
   </body>
 </html>

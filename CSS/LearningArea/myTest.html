@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       div {
         border: 1px solid black;
@@ -42,6 +42,20 @@
         clear: both;
         padding: 20px;
         /* margin-left: 15px; */
+      }
+
+      @media (max-width: 480px) {
+        #container {
+          width: auto;
+        }
+        #content {
+          float: none;
+          width: auto;
+        }
+        #sidebar {
+          float: none;
+          width: auto;
+        }
       }
     </style>
     <title>안보고 헤보기 1탄</title>
