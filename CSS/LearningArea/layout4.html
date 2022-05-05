@@ -6,17 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Join</title>
     <style>
-      body {
-        background-color: rgb(37, 35, 35);
-      }
-
       div {
         box-sizing: border-box;
-      }
-
-      h3 {
-        font-family: "Nanum Gothic";
-        font-size: 25px;
       }
 
       p {
@@ -30,18 +21,25 @@
         border: 2px solid;
         border-color: #eee;
         border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        box-sizing: border-box;
+      }
+
+      .bg {
+        background-color: rgb(37, 35, 35);
+        padding: 30px;
       }
 
       .wap {
-        width: 55%;
+        width: 80%;
         max-width: 600px;
-        padding: 50px;
+        padding: 30px;
         background-color: white;
         position: relative;
-        top: 150px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        margin: auto;
       }
 
       input[type="email"] {
@@ -54,20 +52,12 @@
 
       .contact-fristNamebox {
         float: left;
-      }
-
-      input[name="fristName"] {
-        width: 100%;
-        padding: 10px;
+        width: 50%;
       }
 
       .contact-lastNamebox {
-        float: right;
-      }
-
-      input[name="lastName"] {
-        width: 100%;
-        padding: 10px;
+        float: left;
+        width: 50%;
       }
 
       .contact-messagebox {
@@ -77,48 +67,39 @@
       input[name="messagebox"] {
         width: 100%;
         height: 15vh;
-        margin-bottom: 25px;
-      }
-
-      input[type="submit"] {
-        position: relative;
-        left: 45%;
-        width: 150px;
-        background-color: orange;
-        color: white;
-        font-weight: 600;
-        font-size: 15px;
       }
     </style>
   </head>
   <body>
-    <div class="wap">
-      <h3>Contact us</h3>
-      <!-- 이메일 -->
-      <div class="contact-emailbox">
-        <p>Your Email</p>
-        <input type="email" name="email" placeholder="email@example.com" />
-      </div>
-      <!-- 이름 -->
-      <div class="contact-Namebox">
-        <div class="contact-fristNamebox">
-          <p>First name</p>
-          <input type="text" name="fristName" />
+    <div class="bg">
+      <div class="wap">
+        <h3>Contact us</h3>
+        <!-- 이메일 -->
+        <div class="contact-emailbox">
+          <p>Your Email</p>
+          <input type="email" name="email" placeholder="email@example.com" />
         </div>
-        <div class="contact-lastNamebox">
-          <p>Last name</p>
-          <input type="text" name="lastName" />
+        <!-- 이름 -->
+        <div class="contact-Namebox">
+          <div class="contact-fristNamebox">
+            <p>First name</p>
+            <input type="text" name="fristName" />
+          </div>
+          <div class="contact-lastNamebox">
+            <p>Last name</p>
+            <input type="text" name="lastName" />
+          </div>
         </div>
-      </div>
-      <!-- 메시지 -->
-      <div class="contact-messagebox">
-        <p>Message</p>
-        <input type="text" name="messagebox" />
-      </div>
-      <!-- 체크박스 및 전송버튼 -->
-      <div class="contact-checksubmitbox">
-        <input type="checkbox" name="checkbox" disabled="true" /> Subscribe
-        <input type="submit" name="submit" value="SEND" />
+        <!-- 메시지 -->
+        <div class="contact-messagebox">
+          <p>Message</p>
+          <input type="text" name="messagebox" />
+        </div>
+        <!-- 체크박스 및 전송버튼 -->
+        <div class="contact-checksubmitbox">
+          <input type="checkbox" name="checkbox" /> Subscribe
+          <input type="submit" name="submit" value="SEND" />
+        </div>
       </div>
     </div>
   </body>
