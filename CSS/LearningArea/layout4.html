@@ -14,6 +14,11 @@
         box-sizing: border-box;
       }
 
+      h3 {
+        font-family: "Nanum Gothic";
+        font-size: 25px;
+      }
+
       p {
         font-family: "Nanum Gothic";
         letter-spacing: 2px;
@@ -33,6 +38,7 @@
         padding: 50px;
         background-color: white;
         position: relative;
+        top: 150px;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -71,6 +77,17 @@
       input[name="messagebox"] {
         width: 100%;
         height: 15vh;
+        margin-bottom: 25px;
+      }
+
+      input[type="submit"] {
+        position: relative;
+        left: 45%;
+        width: 150px;
+        background-color: orange;
+        color: white;
+        font-weight: 600;
+        font-size: 15px;
       }
     </style>
   </head>
@@ -100,7 +117,7 @@
       </div>
       <!-- 체크박스 및 전송버튼 -->
       <div class="contact-checksubmitbox">
-        <input type="checkbox" name="checkbox" /> Subscribe
+        <input type="checkbox" name="checkbox" disabled="true" /> Subscribe
         <input type="submit" name="submit" value="SEND" />
       </div>
     </div>
