@@ -6,35 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart</title>
     <style>
+      body {
+        margin: 0px;
+      }
+
+      div {
+        box-sizing: border-box;
+      }
+
+      .bg {
+        background-color: cadetblue;
+        padding: 30px;
+      }
+
+      .wap {
+        width: 80%;
+        max-width: 600px;
+        padding: 30px;
+        background-color: white;
+        position: relative;
+        margin: auto;
+      }
       /* table에는 기본적으로 틈이 존재함 없애고 싶을 시 아래 코드 작성 */
       table {
         border-collapse: collapse;
       }
-      td,
-      th {
-        border: 1px solid black;
+      tr {
+        border: none;
+      }
+
+      td {
+        /* border-top: 1px solid black; */
+        border-bottom: 1px solid cadetblue;
+      }
+
+      img {
+        width: 100px;
       }
       /* vertical-align 경우 인라인/인라인블록 요소 간의 세로정렬할때 사용 */
     </style>
   </head>
   <body>
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>1</th>
-            <td>2</td>
-            <td>3</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>1</th>
-            <td>2</td>
-            <td>3</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="bg">
+      <p>Your shopping cart</p>
+      <div class="wap">
+        <div class="table-box">
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <td>ITEM</td>
+                <td>AMOUT</td>
+                <td>PRICE</td>
+                <td>TOTAL</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th><img src="../images/pic1.jpg" /></th>
+                <td>
+                  <p>Toys</p>
+                  <p>인형짱짱</p>
+                </td>
+                <td>1</td>
+                <td>3</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <th><img src="../images/pic2.jpg" /></th>
+                <td>
+                  <p>Toys</p>
+                  <p>인형짱짱</p>
+                </td>
+                <td>1</td>
+                <td>3</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <th colspan="5"><p>$2968.00</p></th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </body>
 </html>
