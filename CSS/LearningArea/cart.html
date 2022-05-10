@@ -13,82 +13,161 @@
       div {
         box-sizing: border-box;
       }
+      h3 {
+        font-size: 1.5em;
+        color: rgb(28, 42, 82);
+        position: relative;
+        left: 31%;
+      }
 
       .bg {
         background-color: cadetblue;
         padding: 30px;
       }
 
-      .wap {
-        width: 80%;
-        max-width: 600px;
-        padding: 30px;
-        background-color: white;
-        position: relative;
-        margin: auto;
-      }
-      /* table에는 기본적으로 틈이 존재함 없애고 싶을 시 아래 코드 작성 */
-      table {
+      /* table에는 기본적으로 틈이 존재함 없애고 싶을 시  border-collapse: collapse; 작성 */
+      .cart-table {
         border-collapse: collapse;
         width: 100%;
-      }
-      tr {
-        border: none;
+        max-width: 700px;
+        border-radius: 10px;
+        background-color: white;
+        margin: auto;
       }
 
-      td {
-        /* border-top: 1px solid black; */
-        border-bottom: 1px solid cadetblue;
+      .cart-table th {
+        padding: 5px;
+        border-bottom: 2px solid cadetblue;
+        color: rgb(28, 42, 82);
+      }
+
+      .cart-table td {
+        padding: 5px;
+        border-bottom: 2px solid cadetblue;
+        color: cadetblue;
+        /* text-align: center; */
+      }
+
+      .cart-table th {
+        width: 200px;
+      }
+
+      /* cart-table에 있는 td 요소 중 두번째만 적용, 순서는 1 부터 시작 */
+      .cart-table th:nth-child(2) {
+        width: 700px;
+      }
+
+      .cart-tbody tr td {
+        text-align: center;
+      }
+
+      .cart-tbody tr td:nth-child(2) {
+        text-align: center;
+        font-weight: 600;
+      }
+
+      .cart-tbody tr td:nth-child(5) {
+        text-align: center;
+        font-weight: 600;
+        color: rgb(28, 42, 82);
       }
 
       img {
         width: 100px;
+      }
+
+      .cart-footer {
+        margin-top: 20px;
+      }
+
+      .cart-footer-alink {
+        float: left;
+        position: relative;
+        left: 31%;
+      }
+
+      .cart-footer-alink a {
+        color: rgb(28, 42, 82);
+        font-weight: 600;
+      }
+      .cart-footer-btn {
+        float: right;
+        position: relative;
+        right: 31%;
+      }
+
+      .cart-footer-btn button {
+        width: 250px;
+        padding: 20px;
+        background-color: rgb(28, 42, 82);
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-weight: 600;
+        font-size: 1em;
       }
       /* vertical-align 경우 인라인/인라인블록 요소 간의 세로정렬할때 사용 */
     </style>
   </head>
   <body>
     <div class="bg">
-      <div class="wap">
-        <p>Your shopping cart</p>
-        <div class="table-box">
-          <table>
-            <thead>
-              <tr>
-                <td></td>
-                <td>ITEM</td>
-                <td>AMOUT</td>
-                <td>PRICE</td>
-                <td>TOTAL</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><img src="../images/pic1.jpg" /></td>
-                <td>
-                  <p>Toys</p>
-                  <p>인형짱짱</p>
-                </td>
-                <td>1</td>
-                <td>3</td>
-                <td>3</td>
-              </tr>
-              <tr>
-                <td><img src="../images/pic2.jpg" /></td>
-                <td>
-                  <p>Toys</p>
-                  <p>인형짱짱</p>
-                </td>
-                <td>1</td>
-                <td>3</td>
-                <td>3</td>
-              </tr>
-              <tr>
-                <th colspan="5"><p>$2968.00</p></th>
-              </tr>
-            </tbody>
-          </table>
+      <div class="cart-table-box">
+        <h3>Your shopping cart</h3>
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>ITEM</th>
+              <th>AMOUT</th>
+              <th>PRICE</th>
+              <th>TOTAL</th>
+            </tr>
+          </thead>
+          <tbody class="cart-tbody">
+            <tr>
+              <td><img src="../images/pic1.jpg" /></td>
+              <td>
+                <p>Toys</p>
+                <p>인형짱짱</p>
+              </td>
+              <td>1</td>
+              <td>2000</td>
+              <td>2000</td>
+            </tr>
+            <tr>
+              <td><img src="../images/pic2.jpg" /></td>
+              <td>
+                <p>Toys</p>
+                <p>인형짱짱</p>
+              </td>
+              <td>1</td>
+              <td>3000</td>
+              <td>3000</td>
+            </tr>
+            <tr>
+              <th colspan="5">
+                <p
+                  style="
+                    text-align: right;
+                    font-weight: 600;
+                    color: rgb(28, 42, 82);
+                  "
+                >
+                  \ 2968.00
+                </p>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        <div class="cart-footer">
+          <div class="cart-footer-alink">
+            <a href="#">Edit your shopping cart</a>
+          </div>
+          <div class="cart-footer-btn">
+            <button name="paymentbtn">Choose payment</button>
+          </div>
         </div>
+        <div style="clear: both"></div>
       </div>
     </div>
   </body>
