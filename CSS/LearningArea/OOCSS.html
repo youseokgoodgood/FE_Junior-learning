@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>코드 양을 줄이는 CSS 작성법 (OOCSS)</title>
+    <style>
+      /* .btn-red {
+        padding: 15px;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        background-color: red;
+      }
+
+      .btn-blue {
+        padding: 15px;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        background-color: blue;
+      } */
+
+      /* 
+       뼈대용 class(공통적으로 사용할것) 와  살점용 class(각 요소마다 다른 디자인) 각각제작
+       - 공통적으로 만든 것은 재사용성이 좋음
+       - BEM : Block-Element-Modifier 약자임
+      */
+
+      .main-btn {
+        padding: 15px;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .bg-red {
+        background-color: red;
+      }
+
+      .bg-blue {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <button class="btn-red">더 알아보기</button>
+    <button class="btn-blue">구매하기</button> -->
+    <button class="main-btn bg-red">더 알아보기</button>
+    <button class="main-btn bg-blue">구매하기</button>
+  </body>
+</html>
