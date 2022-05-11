@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>레이아웃 만들기 3 : 편리한 Flexbox</title>
+    <style>
+      body {
+        margin: 0px;
+      }
+      /* 
+        flex-grow : 박스크기를 비율로 설정가능
+        */
+      .flex-container {
+        display: flex;
+        width: 100%;
+        height: 10vh;
+        min-width: 500px;
+        justify-content: center; /*좌우정렬*/
+        align-items: center; /* 상하정렬 */
+        flex-direction: row; /* 세로정렬 */
+        flex-wrap: nowrap; /* 폭이 넘치는 요소 wrap 처리 */
+        background-color: rgb(233, 62, 62);
+      }
+
+      /* .flex-item {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+        margin: 5px;
+      } */
+
+      .flex-item-a p {
+        color: white;
+        font-weight: 600;
+        font-size: 30px;
+        padding: 15px;
+      }
+
+      .flex-item-c {
+        display: flex;
+        margin-right: 20px;
+      }
+
+      .flex-item-c p {
+        color: white;
+        font-weight: 600;
+        font-size: 20px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item-a"><p>LOGO</p></div>
+      <div class="flex-item b" style="flex-grow: 1"></div>
+      <!-- flex-grow : 박스크기를 비율로 설정가능, 박스크기 2배로 지정하기-->
+      <div class="flex-item-c">
+        <p>Products</p>
+        <p>Service</p>
+      </div>
+    </div>
+  </body>
+</html>
