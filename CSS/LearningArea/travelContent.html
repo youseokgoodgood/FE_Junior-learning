@@ -16,6 +16,13 @@
 
       /* 
         flex-grow : 박스크기를 비율로 설정가능
+
+        - 반응형 웹에서 사용하는 단위정리
+        width : 16px; 기본 px 단위 
+        width : 1.5rem; html태그 혹은 기본 폰트사이즈의 1.5배 
+        width : 2em; 내 폰트사이즈 혹은 상위요소 폰트사이즈의 2배 
+        width : 50vw; /브라우저(viewport) 화면 폭의 50%
+        width : 50vh; /브라우저(viewport) 화면 높이의 50%
         */
       .flex-container {
         display: flex;
@@ -31,13 +38,6 @@
         top: 0%;
         z-index: 8;
       }
-
-      /* .flex-item {
-        width: 100px;
-        height: 100px;
-        background-color: gray;
-        margin: 5px;
-      } */
 
       .flex-item-a p {
         color: white;
@@ -77,7 +77,8 @@
       */
 
       .main-title {
-        width: 500px;
+        width: 50%;
+        max-width: 50%;
         color: white;
         font-size: 40px;
         margin-top: 100px;
@@ -94,38 +95,6 @@
         text-align: center;
         margin-bottom: 50px;
       }
-
-      /* .main-imgLink {
-        display: block;
-        width: 80px;
-        color: white;
-        font-size: 15px;
-        text-decoration: none;
-        letter-spacing: 0.3em;
-        font-weight: 600;
-        text-align: center;
-        border: 2px solid darksalmon;
-        background-color: darksalmon;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 10px;
-      }
-
-      .main-imgLink:hover {
-        display: block;
-        width: 120px;
-        color: white;
-        letter-spacing: 0.3em;
-        font-size: 20px;
-        text-decoration: none;
-        font-weight: 600;
-        text-align: center;
-        border: 2px solid whitesmoke;
-        background-color: darksalmon;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 10px;
-      } */
 
       /* 
        -position 종류
@@ -161,18 +130,6 @@
         box-sizing : border-box 설정 시 width가 padding,border 포함함
       */
 
-      /* .explain-box {
-        width: 80%;
-        max-width: 600px;
-        position: absolute;
-        top: 700px;
-        left: 0;
-        right: 0;
-        margin: auto;
-        background-color: #eee;
-        padding: 20px;
-      } */
-
       .explain-box {
         width: 80%;
         max-width: 600px;
@@ -196,6 +153,22 @@
         font-family: "Nanum Gothic";
         letter-spacing: 2px;
         color: #555;
+      }
+
+      /* 
+       - 테블릿 pc 디자인사이즈: 1200px,992px
+       - 모바일 디자인사이즈: 768px,576px
+      */
+
+      /* 현재 브라우저 폭이 650px 이하일 경우 */
+      @media screen and (max-width: 768px) {
+        .main-title {
+          font-size: 20px;
+        }
+
+        .main-content {
+          font-size: 15px;
+        }
       }
     </style>
   </head>
@@ -225,14 +198,6 @@
         </p>
       </div>
       <br />
-      <div class="explain-box" style="padding: 50px">
-        <h3>춘장해수욕장 후기</h3>
-        <p>
-          사람이 그렇게 많이 없어서 좋았다. 오히려 캠핑하는 사람들이 많아
-          의외였고, 수산시장에서 참돔,갑오징어를 회를 구매 후 바로 숙소에서
-          부모님과 같이 먹었다.
-        </p>
-      </div>
     </div>
   </body>
 </html>
