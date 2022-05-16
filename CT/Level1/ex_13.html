@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자연수 뒤집어 배열로 만들기</title>
+    <script>
+      /*
+        자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요. 
+        예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다.
+
+        n	return
+        12345	[5,4,3,2,1]
+        */
+
+      function solution(n) {
+        let temp = [];
+        Array.from(n.toString())
+          .reverse()
+          .forEach((item) => {
+            temp.push(Number(item));
+          });
+        return temp;
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
