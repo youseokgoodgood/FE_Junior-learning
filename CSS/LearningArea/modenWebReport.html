@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>반응형 웹 페이지</title>
     <style>
       .container {
@@ -20,8 +27,21 @@
         margin: 50px;
       }
 
-      .menu-box p:first-child {
+      .menu-box i + p {
         font-weight: 600;
+      }
+
+      .menu-box i {
+        background-color: burlywood;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        padding-top: 25px;
+        box-sizing: border-box;
+        color: white;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
       }
 
       @media screen and (max-width: 1200px) {
@@ -45,10 +65,12 @@
     <div class="container">
       <div class="menu-box-one">
         <div class="menu-box">
+          <i class="fa-solid fa-cart-shopping fa-3x fa-align-center"></i>
           <p>Fast Shopping</p>
           <p>lorem ipsum</p>
         </div>
         <div class="menu-box">
+          <i class="fa-solid fa-thumbs-up fa-3x fa-align-center"></i>
           <p>Good Service</p>
           <p>lorem ipsum</p>
         </div>
@@ -56,10 +78,12 @@
 
       <div class="menu-box-two">
         <div class="menu-box">
+          <i class="fa-solid fa-barcode fa-3x fa-align-center"></i>
           <p>Free Coupons</p>
           <p>lorem ipsum</p>
         </div>
         <div class="menu-box">
+          <i class="fa-solid fa-shirt fa-3x fa-align-center"></i>
           <p>New Products</p>
           <p>lorem ipsum</p>
         </div>
