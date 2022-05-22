@@ -13,6 +13,11 @@
     />
     <title>반응형 웹 페이지</title>
     <style>
+      @font-face {
+        font-family: "naum";
+        src: url("../font/NanumSquare-master/NanumSquareR.woff");
+      }
+
       .container {
         width: 100%;
         height: 100vh;
@@ -59,6 +64,97 @@
           margin: 0px;
         }
       }
+
+      /* 상품진열 */
+      /*
+       -one-way 애니메이션 만드는 step
+       1. 시작스타일 만들기 -> 처음 어떻게 보여줄건지
+       2. 최종스타일 만들기 -> 마지막에 어떻게 보여줄건지
+       3. 언제 최종스타일로 변하는지 -> 트리거를 언제 작용 할건지
+       4. transition 으로 애니메이션 적용
+      */
+
+      .shop-bg {
+        background-color: #eee;
+        padding: 20px;
+      }
+
+      .shop-container {
+        display: flex;
+        width: 90%;
+        margin: auto;
+      }
+
+      .shop-item {
+        width: 33%;
+        padding: 10px;
+      }
+
+      .shop-item img {
+        width: 100%;
+        display: block;
+      }
+
+      .shop-overlay-wap {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .overlay-black {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        margin-top: 100%;
+        transition: all 1s;
+        opacity: 0.5;
+      }
+
+      .shop-overlay-wap:hover .overlay-black {
+        margin-top: 50%;
+        opacity: 0.5;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 50%;
+        background-color: black;
+        opacity: 0;
+        /* 위에 있는 스타일이 변하면 1초정도 걸리면서 서서히 변하게 해줌*/
+        /* transition: all 1s;
+        transition-timing-function: cubic-bezier(0.5); */
+        animation: motion 1s linear 1s infinite alternate;
+        margin-top: 0;
+      }
+
+      /* @keyframes motion {
+        0% {
+          margin-top: 150px;
+        }
+        100% {
+          margin-bottom: 150px;
+        }
+      } */
+
+      .overlay:hover {
+        opacity: 0.5;
+      }
+
+      .shop-content {
+        position: relative;
+        top: 30px;
+        left: 25px;
+      }
+
+      .shop-content h1,
+      h3 {
+        color: white;
+        font-family: "naum";
+        margin: 5px;
+      }
     </style>
   </head>
   <body>
@@ -86,6 +182,30 @@
           <i class="fa-solid fa-shirt fa-3x fa-align-center"></i>
           <p>New Products</p>
           <p>lorem ipsum</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-bg">
+      <div class="shop-container">
+        <div class="shop-item">
+          <div style="position: relative">
+            <div class="shop-overlay-wap">
+              <div class="overlay-black">
+                <div class="shop-content">
+                  <h1>$60</h1>
+                  <h3>인기상품</h3>
+                </div>
+              </div>
+            </div>
+            <img src="../images/product1-1.jpg" alt="" />
+          </div>
+        </div>
+        <div class="shop-item">
+          <img src="../images/product2.jpg" alt="" />
+        </div>
+        <div class="shop-item">
+          <img src="../images/product3.jpg" alt="" />
         </div>
       </div>
     </div>
