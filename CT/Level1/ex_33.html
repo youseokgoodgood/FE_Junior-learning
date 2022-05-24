@@ -45,7 +45,13 @@
         */
 
       function BonusFun(bonusWord) {
-        let keyWord = bonusWord.split;
+        if (bonusWord === "S") {
+          return 1;
+        } else if (bonusWord === "D") {
+          return 2;
+        } else if (bonusWord === "T") {
+          return 3;
+        }
       }
 
       function solution(dartResult) {
@@ -58,25 +64,49 @@
     */
         var answer = 0;
         let datObj = {};
+        let fristScore = 0;
+        let fristbonus = 0;
+        let secondScore = 0;
+        let secondbonus = 0;
+        let thirdScore = 0;
+        let thirdbonus = 0;
 
         datObj.score = dartResult
           .match(/\d([^*#])/g)
           .filter((element, i) => element);
-        datObj.bonus = dartResult.split(/\d/g).filter((element, i) => element);
+        //datObj.bonus = dartResult.split(/\d/g).filter((element, i) =>element);
         datObj.option = dartResult.split(/([*#])/g);
-        //console.log(datObj.score[0][1])
+        console.log(datObj.score);
         if (datObj.option !== null) {
           for (const key in datObj) {
-            if (key === "option") {
-              if (datObj[key].indexOf("*") === 1) {
+            fristScore = datObj.score[0][0];
+            fristbonus = BonusFun(datObj.score[0][1]);
+            secondScore = datObj.score[1][0];
+            secondbonus = BonusFun(datObj.score[1][1]);
+            thirdScore = datObj.score[2][0];
+            thirdbonus = BonusFun(datObj.score[2][1]);
+
+            if (key === "option" && datObj.option !== null) {
+              if (datObj.option.indexOf("*") === 1) {
                 answer =
-                  Math.pow(1, 1) * 2 + Math.pow(2, 2) * 2 + Math.pow(3, 3);
+                  Math.pow(fristScore, fristbonus) * 2 +
+                  Math.pow(secondScore, secondbonus) * 2 +
+                  Math.pow(thirdScore, thirdbonus);
+              } else if (datObj.option.indexOf("#") === 1) {
+                answer =
+                  Math.pow(fristScore, fristbonus) +
+                  Math.pow(secondScore, secondbonus) * -1 +
+                  Math.pow(thirdScore, thirdbonus);
               }
+            } else {
+              answer =
+                Math.pow(fristScore, fristbonus) +
+                Math.pow(secondScore, secondbonus) +
+                Math.pow(thirdScore, thirdbonus);
             }
             console.log("key : " + key + ", value : " + datObj[key]);
           }
         }
-        //console.log(dartResult.split(''))
         return answer;
       }
     </script>
