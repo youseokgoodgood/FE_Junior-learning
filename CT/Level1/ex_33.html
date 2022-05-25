@@ -70,13 +70,16 @@
         let secondbonus = 0;
         let thirdScore = 0;
         let thirdbonus = 0;
-
+        //\d{1,2}(?:[^*#])
+        //datObj.score = dartResult.match(/\d([^*#])/g).filter((element, i) =>element);
         datObj.score = dartResult
-          .match(/\d([^*#])/g)
+          .match(/\d{1,2}(?:[^*#])/g)
           .filter((element, i) => element);
         //datObj.bonus = dartResult.split(/\d/g).filter((element, i) =>element);
-        datObj.option = dartResult.split(/([*#])/g);
-        console.log(datObj.option);
+        datObj.option = dartResult
+          .split(/([*#])/g)
+          .filter((element, i) => element);
+        console.log(datObj.score);
         if (datObj.option !== null) {
           for (const key in datObj) {
             fristScore = datObj.score[0][0];
@@ -89,7 +92,8 @@
             if (key === "option" && datObj.option !== null) {
               if (
                 datObj.option.indexOf("*") === 1 &&
-                datObj.option.lastIndexOf("*") !== 3
+                datObj.option.lastIndexOf("*") !== 3 &&
+                datObj.option.length !== 2
               ) {
                 answer =
                   Math.pow(fristScore, fristbonus) * 2 +
@@ -97,12 +101,14 @@
                   Math.pow(thirdScore, thirdbonus);
               } else if (
                 datObj.option.indexOf("#") === 1 &&
-                datObj.option.lastIndexOf("*") !== 3
+                datObj.option.lastIndexOf("*") !== 3 &&
+                datObj.option.length !== 2
               ) {
                 answer =
                   Math.pow(fristScore, fristbonus) +
                   Math.pow(secondScore, secondbonus) * -1 +
                   Math.pow(thirdScore, thirdbonus);
+                console.log(datObj.score[2]);
               } else if (
                 datObj.option.indexOf("*") === 1 &&
                 datObj.option.lastIndexOf("*") === 3
@@ -119,6 +125,24 @@
                   Math.pow(fristScore, fristbonus) * -1 * 2 +
                   Math.pow(secondScore, secondbonus) * 2 +
                   Math.pow(thirdScore, thirdbonus);
+              } else if (
+                datObj.option.indexOf("*") === 1 &&
+                datObj.option.lastIndexOf("*") !== 3 &&
+                datObj.option.length === 2
+              ) {
+                answer =
+                  Math.pow(fristScore, fristbonus) +
+                  Math.pow(secondScore, secondbonus) * 2 +
+                  Math.pow(thirdScore, thirdbonus) * 2;
+              } else if (
+                datObj.option.indexOf("#") === 1 &&
+                datObj.option.lastIndexOf("*") !== 3 &&
+                datObj.option.length === 2
+              ) {
+                answer =
+                  Math.pow(fristScore, fristbonus) +
+                  Math.pow(secondScore, secondbonus) +
+                  Math.pow(thirdScore, thirdbonus) * -1;
               }
             } else {
               answer =
