@@ -76,7 +76,7 @@
           .filter((element, i) => element);
         //datObj.bonus = dartResult.split(/\d/g).filter((element, i) =>element);
         datObj.option = dartResult.split(/([*#])/g);
-        console.log(datObj.score);
+        console.log(datObj.option);
         if (datObj.option !== null) {
           for (const key in datObj) {
             fristScore = datObj.score[0][0];
@@ -87,15 +87,37 @@
             thirdbonus = BonusFun(datObj.score[2][1]);
 
             if (key === "option" && datObj.option !== null) {
-              if (datObj.option.indexOf("*") === 1) {
+              if (
+                datObj.option.indexOf("*") === 1 &&
+                datObj.option.lastIndexOf("*") !== 3
+              ) {
                 answer =
                   Math.pow(fristScore, fristbonus) * 2 +
                   Math.pow(secondScore, secondbonus) * 2 +
                   Math.pow(thirdScore, thirdbonus);
-              } else if (datObj.option.indexOf("#") === 1) {
+              } else if (
+                datObj.option.indexOf("#") === 1 &&
+                datObj.option.lastIndexOf("*") !== 3
+              ) {
                 answer =
                   Math.pow(fristScore, fristbonus) +
                   Math.pow(secondScore, secondbonus) * -1 +
+                  Math.pow(thirdScore, thirdbonus);
+              } else if (
+                datObj.option.indexOf("*") === 1 &&
+                datObj.option.lastIndexOf("*") === 3
+              ) {
+                answer =
+                  Math.pow(fristScore, fristbonus) * 2 * 2 +
+                  Math.pow(secondScore, secondbonus) * 2 +
+                  Math.pow(thirdScore, thirdbonus);
+              } else if (
+                datObj.option.indexOf("#") === 1 &&
+                datObj.option.lastIndexOf("*") === 3
+              ) {
+                answer =
+                  Math.pow(fristScore, fristbonus) * -1 * 2 +
+                  Math.pow(secondScore, secondbonus) * 2 +
                   Math.pow(thirdScore, thirdbonus);
               }
             } else {
