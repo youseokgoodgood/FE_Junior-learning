@@ -58,7 +58,7 @@
         //\d{1,2}(?:[^*#])
         ///\d{1,3}|(?:[^0-9])/g
         //datObj.score = dartResult.match(/\d([^*#])/g).filter((element, i) =>element);
-        let temp = dartResult
+        let scoreList = dartResult
           .match(/\d{1,3}|(?:[^0-9])/g)
           .filter((element, i) => element);
         //datObj.bonus = dartResult.split(/\d/g).filter((element, i) =>element);
@@ -68,25 +68,28 @@
         //console.log(dartResult.match(/\d{1,3}|(?:[^0-9])/g).filter((element, i) =>element))
         //console.log(dartResult.split(/([*#])/g).filter((element, i) =>element))
 
-        temp.forEach((ele, index) => {
+        scoreList.forEach((ele, index) => {
           if (
-            temp[index + 1] === "S" ||
-            temp[index + 1] === "D" ||
-            temp[index + 1] === "T"
+            scoreList[index + 1] === "S" ||
+            scoreList[index + 1] === "D" ||
+            scoreList[index + 1] === "T"
           ) {
             let bonus =
-              temp[index + 1] === "S" ? 1 : temp[index + 1] === "D" ? 2 : 3;
+              scoreList[index + 1] === "S"
+                ? 1
+                : scoreList[index + 1] === "D"
+                ? 2
+                : 3;
 
             if (answer !== 0) {
-              console.log(answer);
-              answer += Math.pow(temp[index], bonus);
+              answer += Math.pow(scoreList[index], bonus);
             } else {
-              answer = Math.pow(temp[index], bonus);
+              answer = Math.pow(scoreList[index], bonus);
             }
           } else {
-            if (temp[index] === "*") {
+            if (scoreList[index] === "*") {
               answer *= 2;
-            } else if (temp[index] === "#") {
+            } else if (scoreList[index] === "#") {
               answer *= -1;
             }
           }
