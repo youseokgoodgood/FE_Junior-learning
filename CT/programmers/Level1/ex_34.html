@@ -33,18 +33,26 @@
 
       function solution(n, arr1, arr2) {
         var answer = [];
-        let cc = arr1.map((ele, index) => {
-          let num = ele | arr2[index];
-          let binary = num.toString(2).split("");
-
-          if (binary.indexOf("1") > -1) {
-            answer.push("#");
-          }
+        let binaryList = arr1.map((ele, index) => {
+          return (ele | arr2[index]).toString(2).split("");
+        });
+        console.log(binaryList);
+        binaryList.forEach((binary, index) => {
+          //console.log(answer);
+          binary.forEach((binaryScond, index) => {
+            if (index < 4) {
+              if (binaryScond.indexOf("1") > -1) {
+                answer.push("#");
+              } else {
+                answer.push("*");
+              }
+            }
+          });
         });
 
-        console.log(cc);
+        console.log(answer);
 
-        return answer;
+        //return answer;
       }
     </script>
   </head>
