@@ -30,23 +30,35 @@
         arr2	[27 ,56, 19, 14, 14, 10]
         출력	["######", "### #", "## ##", " #### ", " #####", "### # "]
         */
-
+      // 다른사람 풀이
+      var solution = (n, a, b) =>
+        a.map((a, i) =>
+          (a | b[i])
+            .toString(2)
+            .padStart(n, 0)
+            .replace(/0/g, " ")
+            .replace(/1/g, "#")
+        );
+      /*
+        위 코드 중 'padStart' 함수에 대해 처음 봄 ㄷㄷ
+      */
+      // 내 풀이
       function solution(n, arr1, arr2) {
-        var answer = [];
         let text = "";
-        let binaryList = arr1.map((ele, index) => {
-          text = (ele | arr2[index]).toString(2).replace(/\d{0}(?:[^0])/g, "#");
+        let zero = "0";
+        let answer = arr1.map((ele, index) => {
+          let num = Math.abs((ele | arr2[index]).toString(2).length - n);
+          if ((ele | arr2[index]).toString(2).length !== n) {
+            text = `${zero.repeat(num)}${(ele | arr2[index]).toString(2)}`;
+          } else {
+            text = (ele | arr2[index]).toString(2);
+          }
+          text = text.replace(/\d{0}(?:[^0])/g, "#");
           text = text.replace(/\d{0}(?:[0])/g, " ");
           return text;
         });
 
-        //binary[i] === '1' ? answer.push('#') : answer.push('*')
-        //'10101'.replace(/\d{0}(?:[^0])/g,'#')
-        //'10101'.replace(/\d{0}(?:[0])/g,'#')
-        console.log(binaryList);
-        //console.log(answer)
-
-        return binaryList;
+        return answer;
       }
     </script>
   </head>
