@@ -33,26 +33,20 @@
 
       function solution(n, arr1, arr2) {
         var answer = [];
+        let text = "";
         let binaryList = arr1.map((ele, index) => {
-          return (ele | arr2[index]).toString(2).split("");
+          text = (ele | arr2[index]).toString(2).replace(/\d{0}(?:[^0])/g, "#");
+          text = text.replace(/\d{0}(?:[0])/g, " ");
+          return text;
         });
+
+        //binary[i] === '1' ? answer.push('#') : answer.push('*')
+        //'10101'.replace(/\d{0}(?:[^0])/g,'#')
+        //'10101'.replace(/\d{0}(?:[0])/g,'#')
         console.log(binaryList);
-        binaryList.forEach((binary, index) => {
-          //console.log(answer);
-          binary.forEach((binaryScond, index) => {
-            if (index < 4) {
-              if (binaryScond.indexOf("1") > -1) {
-                answer.push("#");
-              } else {
-                answer.push("*");
-              }
-            }
-          });
-        });
+        //console.log(answer)
 
-        console.log(answer);
-
-        //return answer;
+        return binaryList;
       }
     </script>
   </head>
