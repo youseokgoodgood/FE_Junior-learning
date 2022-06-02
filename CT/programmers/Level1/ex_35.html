@@ -38,42 +38,28 @@
         입출력 예 #3
         명함들을 적절히 회전시켜 겹쳤을 때, 모든 명함을 포함하는 가장 작은 지갑의 크기는 133(=19 x 7)입니다.
         */
-
-      //         function solution(sizes) {
-      //     let sizeList = sizes.join().split(',').sort((a,b)=> a-b)
-      //     let hNum = sizeList.length % 2 === 0 ? Math.floor((sizeList.length-1)/2) : Math.floor(sizeList.length/2)
-      //     let w = 0;
-      //     let h = 0;
-      //     let midNum = sizeList[hNum]
-
-      //     sizeList.forEach((ele,i)=>{
-      //          if(Number(ele) > midNum){
-      //              w = Number(ele) >= w ? Number(ele) : w;
-      //          }else{
-      //              h = Number(ele) >= h ? Number(ele) : h;
-      //          }
-      //     });
-
-      //     return  w * h
-      // }
+      /*
+      다른사람 풀이 - 가독성 부분 참고
 
       function solution(sizes) {
-        let sizeList = sizes
-          .join()
-          .split(",")
-          .sort((a, b) => a - b);
-        let hNum =
-          sizeList.length % 2 === 0
-            ? Math.floor((sizeList.length - 1) / 2)
-            : Math.floor(sizeList.length / 2);
-        let midNum = sizeList[hNum];
-        //let w = Math.max(...sizeList.filter((max,i)=>Number(max) > midNum));
-        //let h = Math.max(...sizeList.filter((min,i)=>Number(min) <= midNum));
-        const w = Math.max(...sizes.map((card) => card[0]));
-        const h = Math.max(...sizes.map((card) => card[1]));
+        const rotated = sizes.map(([w, h]) => w < h ? [h, w] : [w, h]);
 
-        console.log(w);
-        console.log(h);
+        let maxSize = [0, 0];
+        rotated.forEach(([w, h]) => {
+            if (w > maxSize[0]) maxSize[0] = w;
+            if (h > maxSize[1]) maxSize[1] = h;
+        })
+        return maxSize[0]*maxSize[1];
+      }
+      */
+
+      // 내풀이
+      function solution(sizes) {
+        let sizeList = sizes.map((ele) =>
+          ele[0] < ele[1] ? [ele[1], ele[0]] : [ele[0], ele[1]]
+        );
+        const w = Math.max(...sizeList.map((wMax) => wMax[0]));
+        const h = Math.max(...sizeList.map((hMax) => hMax[1]));
 
         return w * h;
       }
