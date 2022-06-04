@@ -44,36 +44,31 @@
 
       function solution(numbers) {
         var answer = [];
-        let min = Math.min(...numbers);
-        let max = Math.max(...numbers);
-        //가장 작은 수 , 큰수
-        //중복제거
-        numbers.sort().map((ele, i) => {
-          if (numbers.lastIndexOf(ele) !== numbers.indexOf(ele)) {
-            return numbers.splice(1, 1);
-          }
+
+        numbers.forEach((ele, i, arr) => {
+          arr.forEach((arrEle, j) => {
+            let sum = 0;
+            if (numbers[i] !== arr[j]) {
+              if (answer.length !== 0) {
+                sum = ele + arrEle;
+                if (!answer.includes(sum)) {
+                  answer.push(sum);
+                }
+              } else {
+                sum = ele + arrEle;
+                answer.push(sum);
+              }
+            } else {
+              if (arr.lastIndexOf(arrEle) !== arr.indexOf(arrEle)) {
+                sum = ele + arrEle;
+                if (!answer.includes(sum)) {
+                  answer.push(sum);
+                }
+              }
+            }
+          });
         });
-
-        //더하기
-        numbers.forEach((ele, i) => {
-          let sum = 0;
-          if (min === ele && min >= 1) {
-            sum = min + ele;
-            answer.push(sum);
-          }
-
-          if (min < ele && ele < max) {
-            sum = min + ele;
-            answer.push(sum);
-          }
-
-          if (ele < max) {
-            sum = max + ele;
-            //console.log(sum)
-            answer.push(sum);
-          }
-        });
-
+        //console.log(answer.sort((a,b)=>a-b))
         return answer.sort((a, b) => a - b);
       }
     </script>
