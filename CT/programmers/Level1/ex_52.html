@@ -114,9 +114,41 @@
       // 7단계 new_id의 길이가 2자 이하라면, new_id의 마지막 문자를 new_id의 길이가 3이 될 때까지 반복해서 끝에 붙입니다.
       //new_id.match(/[\w\.\-\_]/g).join('').match(/([^\.]{2})/g)
       function solution(new_id) {
-        console.log(new_id.toLowerCase());
+        let text = new_id
+          .toLowerCase()
+          .match(/[\w\.\-\_]/g)
+          .join("")
+          .replace(/([\.]{2,})/g, ".");
         var answer = "";
-        return answer;
+
+        if (text[text.length - 1] === ".") {
+          text = text.substring(text.length - 1, "");
+        }
+
+        if (text[0] === ".") {
+          text = text.substring(1);
+        }
+
+        if (text === "") {
+          text = "a".repeat(1);
+        }
+
+        if (text.length > 15) {
+          text = text.split("", 15).join("");
+
+          if (text[text.length - 1] === ".") {
+            text = text.substring(text.length - 1, "");
+          }
+        }
+
+        if (text.length <= 2) {
+          text =
+            text.length > 1
+              ? text.concat(text[text.length - 1]).repeat(text.length - 1)
+              : text[text.length - 1].repeat(3);
+        }
+
+        return text;
       }
     </script>
   </head>
